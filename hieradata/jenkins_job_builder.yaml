@@ -1,0 +1,15 @@
+---
+
+jenkins_job_builder::version: latest
+jenkins_job_builder::install_from_git: true
+jenkins_job_builder::git_url: https://github.com/openstack-infra/jenkins-job-builder
+jenkins_job_builder::git_revision: 'master'
+
+##jenkins_job_builder::hipchat_token: 
+##jenkins_job_builder::user: 
+##jenkins_job_builder::password:
+##jenkins_job_builder::jenkins_url:
+#jenkins_job_builder::jobs:
+#  Puppet_Template_hiera:
+#  Puppet_Module_files:
+#  Puppet_Template_module:

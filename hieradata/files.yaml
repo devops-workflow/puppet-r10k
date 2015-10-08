@@ -1,0 +1,118 @@
+---
+
+# TODO: rework for current standards
+# files::defs:
+
+# Set defaults
+
+# Put in location / env files
+
+# Global defaults
+files_default_ensure       : present
+#files_default_backup       :
+#files_default_force        :
+files_default_group        : root
+#files_default_ignore       :
+files_default_mode         : '0444'
+files_default_owner        : root
+#files_default_purge        :
+#files_default_recurse      :
+#files_default_recurselimit :
+#files_default_replace      :
+#files_default_sourceselect :
+
+files_list_default:
+  - root 
+
+files_list_jenkins-images:
+  - jenkins-centos
+  - jenkins-confluence
+  - jenkins-foreman
+  - jenkins-github
+  - jenkins-grafana
+  - jenkins-hipchat
+  - jenkins-jenkins
+  - jenkins-jira
+  - jenkins-nagios
+  - jenkins-openstack
+  - jenkins-puppetlabs
+  - jenkins-redhat
+  - jenkins-testlink
+  - jenkins-ubuntu
+
+files_list_jenkins-master:
+  - jenkins-images
+
+# Doc all fields
+
+files_defs:
+  jenkins-centos:
+    source  : site_workflow/jenkins/images/centos-logo-32x32.png
+    path    : /var/lib/jenkins/userContent/customIcon/centos.png
+    mode    : '0644'
+    backup  : false
+  jenkins-confluence:
+    source  : site_workflow/jenkins/images/confluence-logo-16x16.png
+    path    : /var/lib/jenkins/userContent/customIcon/confluence.png
+    mode    : '0644'
+    backup  : false
+  jenkins-foreman:
+    source  : site_workflow/jenkins/images/foreman-logo.png
+    path    : /var/lib/jenkins/userContent/customIcon/foreman.png
+    mode    : '0644'
+    backup  : false
+  jenkins-github:
+    source  : site_workflow/jenkins/images/github-logo-32x32.png
+    path    : /var/lib/jenkins/userContent/customIcon/github.png
+    mode    : '0644'
+    backup  : false
+  jenkins-grafana:
+    source  : site_workflow/jenkins/images/grafana-logo-32x32.png
+    path    : /var/lib/jenkins/userContent/customIcon/grafana.png
+    mode    : '0644'
+    backup  : false
+  jenkins-hipchat:
+    source  : site_workflow/jenkins/images/hipchat-logo-80x80.png
+    path    : /var/lib/jenkins/userContent/customIcon/hipchat.png
+    mode    : '0644'
+    backup  : false
+  jenkins-jenkins:
+    source  : site_workflow/jenkins/images/jenkins-logo-48x48.png
+    path    : /var/lib/jenkins/userContent/customIcon/jenkins.png
+    mode    : '0644'
+    backup  : false
+  jenkins-jira:
+    source  : site_workflow/jenkins/images/jira-logo.png
+    path    : /var/lib/jenkins/userContent/customIcon/jira.png
+    mode    : '0644'
+    backup  : false
+  jenkins-nagios:
+    source  : site_workflow/jenkins/images/nagios-logo-48x48.png
+    path    : /var/lib/jenkins/userContent/customIcon/nagios.png
+    mode    : '0644'
+    backup  : false
+  jenkins-openstack:
+    source  : site_workflow/jenkins/images/openstack-logo-70x70.png
+    path    : /var/lib/jenkins/userContent/customIcon/openstack.png
+    mode    : '0644'
+    backup  : false
+  jenkins-puppetlabs:
+    source  : site_workflow/jenkins/images/puppetlabs-logo-48x48.png
+    path    : /var/lib/jenkins/userContent/customIcon/puppetlabs.png
+    mode    : '0644'
+    backup  : false
+  jenkins-redhat:
+    source  : site_workflow/jenkins/images/redhat-logo-32x32.png
+    path    : /var/lib/jenkins/userContent/customIcon/redhat.png
+    mode    : '0644'
+    backup  : false
+  jenkins-testlink:
+    source  : site_workflow/jenkins/images/testlink-logo.png
+    path    : /var/lib/jenkins/userContent/customIcon/testlink.png
+    mode    : '0644'
+    backup  : false
+  jenkins-ubuntu:
+    source  : site_workflow/jenkins/images/ubuntu-logo-32x32.png
+    path    : /var/lib/jenkins/userContent/customIcon/ubuntu.png
+    mode    : '0644'
+    backup  : false
