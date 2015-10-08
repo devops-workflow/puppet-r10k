@@ -11,7 +11,7 @@ class { 'r10k':
   sources           => {
     'puppet' => {
       #'remote'  => 'https://github.com/glarizza/puppet_repository.git',
-      'remote'  => 'https://github.com/snemetz/puppet-r10k.git',
+      'remote'  => 'https://github.com/devops-workflow/puppet-r10k.git',
       'basedir' => "${::settings::confdir}/environments",
       'prefix'  => false,
     }

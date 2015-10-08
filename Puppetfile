@@ -91,7 +91,7 @@ mod 'ceph',
   :git => 'https://github.com/stackforge/puppet-ceph',
   :ref => 'master'
 mod 'files',
-  :git => 'https://github.com/snemetz/puppet-files.git',
+  :git => 'https://github.com/devops-workflow/puppet-files.git',
   :ref => 'master'
 mod 'profiles',
   :git => 'https://github.com/devops-workflow/puppet_module_profiles.git',
