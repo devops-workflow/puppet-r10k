@@ -8,10 +8,6 @@ node pe-381-master {
 }
 
 node pe-381-agent-jenkins {
-  file { '/usr/bin/pip-python':
-    ensure => link,
-    target => '/usr/bin/pip',
-  }
   class { '::profiles::base': }
   class { '::profiles::jenkins::master': }
 }
