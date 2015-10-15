@@ -4,8 +4,8 @@ puppet apply $(dirname $0)/configure_r10k.pp
 # puppet apply configure_directory_environments.pp
 r10k deploy environment -pv
 # Copy hiera.yaml from production environment to confdir
-hiera=$(puppet config print | grep hiera_config | cut -d= -f2)
-environments=$(puppet config print | grep environmentpath | cut -d= -f2 | cut -c2-)
+hiera=$(puppet config print hiera_config)
+environments=$(puppet config print environmentpath)
 if [ -f "${environments}/production/hiera.yaml" ]
 then
   /bin/cp -f ${environments}/production/hiera.yaml ${hiera}
