@@ -30,3 +30,8 @@ node 'puppet-master' {
   class { '::profiles::base': }
   class { '::profiles::puppetmaster': }
 }
+
+node jenkins-master {
+  class { '::profiles::base': }
+  class { '::profiles::jenkins::master': }
+}
