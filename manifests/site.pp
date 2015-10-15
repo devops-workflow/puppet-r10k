@@ -25,3 +25,8 @@ node /storage/ {
   # Ceph
   # GlusterFS
 }
+
+node 'puppet-master' {
+  class { '::profiles::base': }
+  class { '::profiles::puppetmaster': }
+}
