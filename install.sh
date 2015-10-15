@@ -6,5 +6,11 @@ r10k deploy environment -pv
 # Copy hiera.yaml from production environment to confdir
 hiera=$(puppet config print | grep hiera_config | cut -d= -f2)
 environments=$(puppet config print | grep environmentpath | cut -d= -f2 | cut -c2-)
-/bin/cp -f ${environments}/production/hiera.yaml ${hiera}
-sed -i "s;:datadir.*;:datadir: \"${environments}/%{::environment}/hieradata\";" ${hiera}
+if [ -f "${environments}/production/hiera.yaml" ]
+then
+  /bin/cp -f ${environments}/production/hiera.yaml ${hiera}
+fi
+if [ -f "${hiera}" ]
+then
+  sed -i "s;:datadir.*;:datadir: \"${environments}/%{::environment}/hieradata\";" ${hiera}
+fi
