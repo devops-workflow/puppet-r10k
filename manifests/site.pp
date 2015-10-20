@@ -28,7 +28,7 @@ node /storage/ {
 
 node 'puppet-master' {
   class { '::profiles::base': }
-  class { '::profiles::puppetmaster': }
+  class { '::profiles::puppet::master': }
 }
 
 node jenkins-master {
