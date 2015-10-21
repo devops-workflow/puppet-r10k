@@ -31,7 +31,12 @@ node 'puppet-master' {
   class { '::profiles::puppet::master': }
 }
 
-node jenkins-master {
+node 'jenkins-master' {
   class { '::profiles::base': }
   class { '::profiles::jenkins::master': }
+}
+
+node 'foreman' {
+  class { '::profiles::base': }
+  class { '::profiles::foreman': }
 }
