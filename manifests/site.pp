@@ -1,6 +1,8 @@
 node pe-381-master {
   class { '::profiles::base': }
   package { 'jq': ensure => latest, }
+
+  # ERROR: Error installing netconf: net-ssh requires Ruby version >= 2.0
   package { 'netconf':
     ensure   => present,
     provider => 'pe_gem',
