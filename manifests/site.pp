@@ -42,3 +42,8 @@ node 'foreman' {
   class { '::profiles::base': }
   class { '::profiles::foreman': }
 }
+
+node 'smtp' {
+  class { '::profiles::base': }
+  class { '::profiles::smtp': }
+}
