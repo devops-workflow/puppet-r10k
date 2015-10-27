@@ -1,4 +1,4 @@
 ---
 
 classes:
- - base
+ - profiles::base
