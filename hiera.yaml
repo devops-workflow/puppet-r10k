@@ -1,8 +1,7 @@
 ---
 :hierarchy:
-  - "%{::location}/%{::hostname}/%{module_name}"
-  - "%{::location}/%{module_name}"
-  - "%{module_name}"
+  - "%{::location}/%{::hostname}"
+  - "%{::hostname}"
   - common
 
 :backends:
