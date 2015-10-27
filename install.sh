@@ -3,7 +3,7 @@ set -u
 set -e
 
 hiera=$(puppet config print hiera_config)
-environments=$(puppet config print environmentpath)
+environments="$(puppet config print confdir)/environments"
 script_dir=$(dirname $0)
 
 puppet module install zack/r10k
