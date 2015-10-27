@@ -1,16 +1,37 @@
 #!/bin/bash
-puppet module install zack/r10k
-puppet apply $(dirname $0)/configure_r10k.pp
-r10k deploy environment -pv
-# Copy hiera.yaml from production environment to confdir
+set -u
+set -e
+
 hiera=$(puppet config print hiera_config)
 environments=$(puppet config print environmentpath)
-current_environment=$(git show-branch --current | sed "s/^\[\([a-zA-Z0-9]*\)\].*/\1/")
-if [ -f "${environments}/${current_branch}/hiera.yaml" ]
+script_dir=$(dirname $0)
+
+puppet module install zack/r10k
+puppet apply "${script_dir}/configure_r10k.pp"
+r10k deploy environment -pv
+
+if [ -f "${environments}/production/hiera.yaml" ] && [ ! -f "$hiera" ]
 then
-  /bin/cp -f "${environments}/${current_branch}/hiera.yaml" "$hiera"
+  echo "Copying ${environments}/production/hiera.yaml to $hiera"
+  /bin/cp -f "${environments}/production/hiera.yaml" "$hiera"
+elif [ -f "${environments}/production/hiera.yaml" ] && [ -f "$hiera" ]
+then
+  diff "${environments}/production/hiera.yaml" "$hiera" > /dev/null
+  if [ $? -ne 0 ]
+  then
+    echo "$hiera has changed.  Copying from production and restarting the master." 
+    /bin/cp -f "${environments}/production/hiera.yaml" "$hiera"
+    config_dir=$(puppet config print confdir)
+    if [ "$config_dir" == "/etc/puppet" ]
+    then
+      service httpd restart
+    else
+      service pe-puppetmaster restart
+    fi
+  fi
 fi
 if [ -f "$hiera" ]
 then
+  echo "Updating datadir in $hiera to point to $environments"
   sed -i "s;:datadir.*;:datadir: \"${environments}/%{::environment}/hieradata\";" "$hiera"
 fi

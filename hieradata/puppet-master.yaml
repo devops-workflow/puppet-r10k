@@ -1,0 +1,10 @@
+---
+puppet::autosign: true
+puppet::server: true
+puppet::server_foreman: false
+puppet::server_environments: []
+puppet::server_external_nodes: "" 
+
+classes:
+  - puppet
+  - profiles::puppet::master

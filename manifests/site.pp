@@ -29,8 +29,7 @@ node /storage/ {
 }
 
 node 'puppet-master' {
-  class { '::profiles::base': }
-  class { '::profiles::puppet::master': }
+  hiera_include('classes')
 }
 
 node 'jenkins-master' {
@@ -39,8 +38,7 @@ node 'jenkins-master' {
 }
 
 node 'foreman' {
-  class { '::profiles::base': }
-  class { '::profiles::foreman': }
+  hiera_include('classes')
 }
 
 node 'smtp' {
