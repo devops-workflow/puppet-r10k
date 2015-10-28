@@ -41,6 +41,10 @@ node 'foreman' {
   hiera_include('classes')
 }
 
+node 'ns-master' {
+  class { '::profiles::base': }
+}
+
 node 'smtp' {
   class { '::profiles::base': }
   class { '::profiles::smtp': }
