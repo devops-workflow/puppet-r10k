@@ -43,6 +43,15 @@ files_list_jenkins-images:
 files_list_jenkins-master:
   - jenkins-images
 
+#
+# BIND Name Server Files
+files_list_ns-zones:
+  - zone-example.com
+
+files_list_ns-master:
+  - ns-zones
+
+
 # Doc all fields
 
 files_defs:
@@ -116,3 +125,9 @@ files_defs:
     path    : /var/lib/jenkins/userContent/customIcon/ubuntu.png
     mode    : '0644'
     backup  : false
+  zone-example.com:
+    source  : site_workflow/bind/example.com
+    path    : /var/named/example.com
+    mode    : '0644'
+    backup  : false
+

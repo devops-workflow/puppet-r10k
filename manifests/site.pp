@@ -42,7 +42,7 @@ node 'foreman' {
 }
 
 node 'ns-master' {
-  class { '::profiles::base': }
+  hiera_include('classes')
 }
 
 node 'smtp' {
