@@ -93,6 +93,9 @@ mod "zack/r10k"
 mod 'ceph',
   :git => 'https://github.com/stackforge/puppet-ceph',
   :ref => 'master'
+mod 'cobbler',
+  :git => 'https://github.com/devops-workflow/puppet_module_cobbler.git',
+  :ref => 'master'
 mod 'files',
   :git => 'https://github.com/devops-workflow/puppet-files.git',
   :ref => 'master'

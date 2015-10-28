@@ -49,3 +49,7 @@ node 'smtp' {
   class { '::profiles::base': }
   class { '::profiles::smtp': }
 }
+
+node 'cobbler' {
+  hiera_include('classes')
+}
