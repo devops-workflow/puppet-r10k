@@ -53,3 +53,7 @@ node 'smtp' {
 node 'cobbler' {
   hiera_include('classes')
 }
+
+node 'cobbler-ubuntu' {
+  hiera_include('classes')
+}

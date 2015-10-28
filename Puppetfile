@@ -24,6 +24,7 @@ mod "puppetlabs/stdlib"
 mod "puppetlabs/vcsrepo"
 mod "puppetlabs/xinetd"
 mod "adrien/alternatives"
+mod "adrien/filemapper"
 # mod "arioch/redis" #???
 mod "camptocamp/archive"
 # handles limits
@@ -61,6 +62,7 @@ mod "puppet/kafka"
 # mod "purpleidea/gluster"
 # mod "razorsedge/network"
 mod "razorsedge/openlldp"
+mod "reidmv/yamlfile"
 mod "rodjek/logrotate"
 # New repo, but not changed in forge yet. mod "jenkinsci/puppet-jenkins"
 mod 'rtyler/jenkins'
@@ -89,12 +91,11 @@ mod "zack/r10k"
 #   github.com mfournier/lldp or narcisbcn/lldp
 # zookeeper
 #   pennycoders/zookeeper or cesnet/zookeeper or razorsedge/cloudera
-
 mod 'ceph',
   :git => 'https://github.com/stackforge/puppet-ceph',
   :ref => 'master'
-mod 'cobbler',
-  :git => 'https://github.com/devops-workflow/puppet_module_cobbler.git',
+mod 'pxe',
+  :git => 'https://github.com/devops-workflow/pxe.git',
   :ref => 'master'
 mod 'files',
   :git => 'https://github.com/devops-workflow/puppet-files.git',
