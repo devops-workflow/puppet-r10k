@@ -1,0 +1,8 @@
+---
+pxe::manage_dhcp: true
+pxe::manage_dns: true
+pxe::next_server: "%{::ipaddress_enp0s8}"
+pxe::server: "%{::ipaddress_enp0s8}"
+
+classes:
+ - "::pxe"

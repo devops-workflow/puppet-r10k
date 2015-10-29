@@ -28,7 +28,9 @@ node /storage/ {
   # GlusterFS
 }
 
+# Vagrant environment
 node 'puppet-master' {
+  $location = 'vagrant'
   hiera_include('classes')
 }
 
@@ -38,10 +40,12 @@ node 'jenkins-master' {
 }
 
 node 'foreman' {
+  $location = 'vagrant'
   hiera_include('classes')
 }
 
 node 'ns-master' {
+  $location = 'vagrant'
   hiera_include('classes')
 }
 
@@ -51,9 +55,11 @@ node 'smtp' {
 }
 
 node 'cobbler' {
+  $location = 'vagrant'
   hiera_include('classes')
 }
 
 node 'cobbler-ubuntu' {
+  $location = 'vagrant'
   hiera_include('classes')
 }

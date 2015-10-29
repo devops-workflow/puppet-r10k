@@ -1,7 +1,0 @@
----
-pxe::manage_dhcp: true
-pxe::next_server: "%{::ipaddress_eth1}"
-pxe::server: "%{::ipaddress_eth1}"
-
-classes:
- - "::pxe"

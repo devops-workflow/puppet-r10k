@@ -71,7 +71,7 @@ mod "saz/rsyslog"
 mod "saz/sudo"
 mod "stahnma/epel"
 mod "stankevich/python"
-#mod "theforeman/dhcp"
+# mod "theforeman/dhcp"
 mod "theforeman/dns"
 #mod "theforeman/foreman_proxy"
 #mod "theforeman/tftp"
@@ -95,7 +95,7 @@ mod 'ceph',
   :git => 'https://github.com/stackforge/puppet-ceph',
   :ref => 'master'
 mod 'pxe',
-  :git => 'https://github.com/devops-workflow/pxe.git',
+  :git => 'https://github.com/devops-workflow/puppet_module_pxe.git',
   :ref => 'master'
 mod 'files',
   :git => 'https://github.com/devops-workflow/puppet-files.git',

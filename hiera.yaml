@@ -1,6 +1,6 @@
 ---
 :hierarchy:
-  - "%{::location}/%{::hostname}"
+  - "%{location}/%{::hostname}"
   - "%{::hostname}"
   - common
 :backends:
