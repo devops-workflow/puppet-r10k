@@ -5,6 +5,8 @@ puppet::server_foreman: false
 puppet::server_environments: []
 puppet::server_external_nodes: "" 
 
+profiles::base::selinux::state: "enforcing"
+
 classes:
   - puppet
   - profiles::puppet::master

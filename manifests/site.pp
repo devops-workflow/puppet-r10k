@@ -63,3 +63,14 @@ node 'cobbler-ubuntu' {
   $location = 'vagrant'
   hiera_include('classes')
 }
+
+node 'trusty' {
+  $location = 'vagrant'
+  hiera_include('classes')
+}
+
+node 'jessie' {
+  $location = 'vagrant'
+  hiera_include('classes')
+}
+

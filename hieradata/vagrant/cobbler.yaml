@@ -4,5 +4,7 @@ pxe::manage_dns: true
 pxe::next_server: "%{::ipaddress_enp0s8}"
 pxe::server: "%{::ipaddress_enp0s8}"
 
+profiles::base::selinux::state: "enforcing"
+
 classes:
  - "::pxe"
