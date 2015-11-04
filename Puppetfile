@@ -81,7 +81,7 @@ mod "thias/selinux"
 mod "thias/sysctl"
 mod "thias/vsftpd"
 mod "trlinkin/nsswitch"
-mod "trlinkin/validate_multi"
+mod "trlinkin/validate_multi" # For trlinkin/nsswitch
 mod "zack/r10k"
 # flume - No apache version on forge
 #   https://github.com/salekseev/puppet-flume - Old but may be good start - flume-ng-agent package
