@@ -1,3 +1,13 @@
+node default {
+
+  if ( $::is_virtual == 'true' ) {
+    $location = 'vagrant'
+  }
+
+  hiera_include('classes')
+
+}
+
 node pe-381-master {
   class { '::profiles::base': }
   package { 'jq': ensure => latest, }
@@ -29,48 +39,12 @@ node /storage/ {
 }
 
 # Vagrant environment
-node 'puppet-master' {
-  $location = 'vagrant'
-  hiera_include('classes')
-}
-
 node 'jenkins-master' {
   class { '::profiles::base': }
   class { '::profiles::jenkins::master': }
-}
-
-node 'foreman' {
-  $location = 'vagrant'
-  hiera_include('classes')
-}
-
-node 'ns-master' {
-  $location = 'vagrant'
-  hiera_include('classes')
 }
 
 node 'smtp' {
   class { '::profiles::base': }
   class { '::profiles::smtp': }
 }
-
-node 'cobbler' {
-  $location = 'vagrant'
-  hiera_include('classes')
-}
-
-node 'cobbler-ubuntu' {
-  $location = 'vagrant'
-  hiera_include('classes')
-}
-
-node 'trusty' {
-  $location = 'vagrant'
-  hiera_include('classes')
-}
-
-node 'jessie' {
-  $location = 'vagrant'
-  hiera_include('classes')
-}
-

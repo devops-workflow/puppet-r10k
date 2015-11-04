@@ -1,4 +1,5 @@
 ---
+profiles::base::selinux::state: "enforcing"
 
 classes:
  - "::profiles::base"
