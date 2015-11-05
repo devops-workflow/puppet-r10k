@@ -1,0 +1,15 @@
+---
+# sysctl
+sysctl::base::purge: false
+
+classes:
+ - "::profiles::sysctl"
+
+#
+# Ref: https://forge.puppetlabs.com/thias/sysctl
+#
+# There should be a cleaner way to bundle config files together?
+sysctl::base::values:
+  net.ipv4.conf.default.log_martians:
+    prefix: '60'
+    value: '1'
