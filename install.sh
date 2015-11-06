@@ -8,8 +8,13 @@ environ="$(puppet config print environment)"
 
 script_dir=$(dirname $0)
 
+echo "Installing Puppet Module: zack/r10k"
 puppet module install zack/r10k
+
+echo "Configuring R10K from $script_dir:"
 puppet apply "${script_dir}/configure_r10k.pp"
+
+echo "Deplying environment from R10k:"
 r10k deploy environment -pv
 
 if [ -f "${confdir}/${environ}/hiera.yaml" ] && [ ! -f "$hiera" ]
@@ -28,8 +33,10 @@ then
     config_dir=$(puppet config print confdir)
     if [ "$config_dir" == "/etc/puppet" ]
     then
+      echo "Restarting httpd"
       service httpd restart
     else
+      echo "Restarting pe-puppetmaster"
       service pe-puppetmaster restart
     fi
   fi
