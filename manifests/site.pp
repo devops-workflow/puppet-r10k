@@ -1,11 +1,9 @@
 node default {
-
   if ( $::is_virtual == 'true' ) {
     $location = 'vagrant'
   }
 
   hiera_include('classes')
-
 }
 
 node pe-381-master {

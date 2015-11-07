@@ -7,9 +7,6 @@ puppet::server_external_nodes: ""
 
 profiles::base::selinux::state: "enforcing"
 
-profiles::base::ntp::restrict:
-  - '10.1.1.0'
-
 classes:
   - puppet
   - profiles::puppet::master
