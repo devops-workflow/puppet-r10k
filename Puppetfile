@@ -92,6 +92,9 @@ mod "zack/r10k"
 #   github.com mfournier/lldp or narcisbcn/lldp
 # zookeeper
 #   pennycoders/zookeeper or cesnet/zookeeper or razorsedge/cloudera
+mod 'btsync',
+  :git => 'https://github.com/devops-workflow/puppet_module_btsync.git',
+  :ref => 'master'
 mod 'ceph',
   :git => 'https://github.com/stackforge/puppet-ceph',
   :ref => 'master'
