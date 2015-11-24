@@ -2,6 +2,7 @@
 :hierarchy:
   - "%{location}/%{::hostname}"
   - "%{location}"
+  - files
   - common
 :backends:
   - yaml
