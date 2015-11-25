@@ -36,8 +36,6 @@ mod "cesnet/hadoop"
 mod "cesnet/spark"
 mod "croddy/make"
 mod "darin/zypprepo"
-# Local User Configuration and SSH Keys
-mod "dmcnicks/users"
 mod "elasticsearch/elasticsearch"
 mod "elasticsearch/logstash"
 mod "genebean/firewalld2iptables"
