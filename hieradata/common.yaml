@@ -3,3 +3,41 @@ profiles::base::selinux::state: "enforcing"
 
 classes:
  - "::profiles::base"
+
+#
+# SSH/SSHd Configuration
+ssh::storeconfigs_enabled: true
+
+#
+# Default /etc/ssh/ssh_config
+#  - Functionally identical to default dist file
+ssh::client_options:
+  'Host *':
+    GSSAPIAuthentication: 'yes'
+    ForwardX11Trusted: 'yes'
+    SendEnv: |
+        LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+            SendEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+            SendEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+            SendEnv XMODIFIERS
+
+# Default /etc/ssh/sshd_config
+#  - Functionally equivalent to puppetlabs/centos-7.0-64-nocm
+ssh::server_options:
+    AcceptEnv: 'LANG LC_*'
+    ChallengeResponseAuthentication: 'no'
+    GSSAPIAuthentication: 'no'
+    ListenAddress:
+        - '0.0.0.0'
+#        - '127.0.0.0'
+#        - '%{::hostname}'
+    PasswordAuthentication: 'yes'
+    PermitRootLogin: 'yes'
+    PrintMotd: 'no'
+    Protocol: '2'
+    Subsystem: 'sftp /usr/lib/openssh/sftp-server'
+    SyslogFacility: 'AUTHPRIV'
+    UseDNS: 'no'
+    UsePAM: 'yes'
+    X11Forwarding: 'yes'
+
