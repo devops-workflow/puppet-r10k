@@ -35,7 +35,7 @@ ssh::server_options:
     PermitRootLogin: 'yes'
     PrintMotd: 'no'
     Protocol: '2'
-    Subsystem: 'sftp /usr/libexec/openssh/sftp-server'
+    Subsystem: 'sftp  %{ssh::sftp_server_path}'
     SyslogFacility: 'AUTHPRIV'
     UseDNS: 'no'
     UsePAM: 'yes'
