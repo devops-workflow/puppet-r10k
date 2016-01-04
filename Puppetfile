@@ -2,7 +2,7 @@ forge "http://forge.puppetlabs.com"
 
 # Modules from the Puppet Forge
 # mod "<user>/<module>"[, '<version>']
-
+mod "puppet/puppetboard"
 mod "puppetlabs/apache"
 mod "puppetlabs/apt", '1.8.0'
 mod "puppetlabs/concat"
@@ -18,6 +18,7 @@ mod "puppetlabs/mysql"
 mod "puppetlabs/ntp"
 mod "puppetlabs/pe_gem"
 mod "puppetlabs/postgresql"
+mod "puppetlabs/puppetdb"
 mod "puppetlabs/ruby"
 mod "puppetlabs/stdlib"
 # mod "puppetlabs/tftp"
@@ -99,8 +100,8 @@ mod 'btsync',
 mod 'ceph',
   :git => 'https://github.com/stackforge/puppet-ceph',
   :ref => 'master'
-mod 'pxe',
-  :git => 'https://github.com/devops-workflow/puppet_module_pxe.git',
+mod 'cobbler',
+  :git => 'https://github.com/devops-workflow/puppet_module_cobbler.git',
   :ref => 'master'
 mod 'files',
   :git => 'https://github.com/devops-workflow/puppet-files.git',
