@@ -3,12 +3,12 @@ puppet::autosign: true
 puppet::server: true
 puppet::server_foreman: false
 puppet::server_environments: []
-puppet::server_external_nodes: "" 
-
-puppetdb::globals::version: "2.3.8-1.el7"
+puppet::server_external_nodes: ""
 puppet::server_reports: "puppetdb"
 puppet::server_storeconfigs_backend: "puppetdb"
 
+puppetdb::globals::version: "2.3.8-1.el7"
+puppetdb::master::config::restart_puppet: false
 puppetdb::puppet_service_name: "httpd"
 puppetdb::store_usage: "5000"
 puppetdb::temp_usage: "1024"
