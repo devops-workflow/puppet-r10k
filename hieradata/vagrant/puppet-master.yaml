@@ -5,11 +5,18 @@ puppet::server_foreman: false
 puppet::server_environments: []
 puppet::server_external_nodes: "" 
 
+puppetdb::globals::version: "2.3.8-1.el7"
+puppet::server_reports: "puppetdb"
+puppet::server_storeconfigs_backend: "puppetdb"
+
+puppetdb::puppet_service_name: "httpd"
+puppetdb::store_usage: "5000"
+puppetdb::temp_usage: "1024"
+
 profiles::base::selinux::state: "enforcing"
 
 profiles::base::ntp::restrict:
   - '10.1.1.0'
 
 classes:
-  - puppet
   - profiles::puppet::master
