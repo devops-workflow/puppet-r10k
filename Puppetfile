@@ -29,7 +29,7 @@ mod "puppetlabs/xinetd"
 mod "adrien/alternatives"
 mod "adrien/filemapper"
 # mod "arioch/redis" #???
-mod "camptocamp/account"
+mod "camptocamp/accounts"
 mod "camptocamp/archive"
 # handles limits
 mod "camptocamp/augeas"
