@@ -8,4 +8,4 @@
   - yaml
 :yaml:
 # When specifying a datadir, make sure the directory exists.
-  :datadir: "/etc/puppetlabs/puppet/environments/%{::environment}/hieradata"
+  :datadir: "/etc/puppet/puppet/environments/%{::environment}/hieradata"
