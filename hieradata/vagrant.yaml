@@ -1,3 +1,8 @@
 ---
 profiles::base::ntp::servers:
   - 'puppet'
+
+sudo::configs:
+  vagrant:
+    content  : "vagrant ALL=(ALL) NOPASSWD: ALL"
+    priority : 10
