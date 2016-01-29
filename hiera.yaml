@@ -1,8 +1,10 @@
 ---
 :hierarchy:
-  - "%{location}/%{::hostname}"
-  - "%{location}"
-  - files
+  - "%{::location}/%{::hostname}/%{module_name}"
+  - "%{::location}/%{::hostname}"
+  - "%{::location}/%{module_name}"
+  - "%{::location}"
+  - "%{module_name}"
   - common
 :backends:
   - yaml
