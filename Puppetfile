@@ -110,6 +110,9 @@ mod 'cobbler',
 mod 'files',
   :git => 'https://github.com/devops-workflow/puppet-files.git',
   :ref => 'master'
+mod 'kong',
+  :git => 'https://github.com/z0mbix/puppet-kong',
+  :ref => 'master'
 mod 'profiles',
   :git => 'https://github.com/devops-workflow/puppet_module_profiles.git',
   :ref => 'master'
