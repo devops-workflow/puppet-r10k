@@ -5,7 +5,7 @@ forge "http://forge.puppetlabs.com"
 mod "puppet/jenkins_job_builder"
 mod "puppet/kafka"
 mod "puppet/puppetboard"
-mod "puppetlabs/apache"
+mod "puppetlabs/apache", '1.7.0'
 mod "puppetlabs/apt", '1.8.0'
 mod "puppetlabs/concat"
 # mod "puppetlabs/docker_platform"
