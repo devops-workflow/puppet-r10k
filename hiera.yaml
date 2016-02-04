@@ -1,9 +1,9 @@
 ---
 :hierarchy:
-  - "%{::location}/%{::hostname}/%{module_name}"
-  - "%{::location}/%{::hostname}"
-  - "%{::location}/%{module_name}"
-  - "%{::location}"
+  - "%{location}/%{hostname}/%{module_name}"
+  - "%{location}/%{hostname}"
+  - "%{location}/%{module_name}"
+  - "%{location}"
   - "%{module_name}"
   - common
 :backends:
@@ -11,4 +11,4 @@
 :yaml:
 # When specifying a datadir, make sure the directory exists.
   #:datadir: "/etc/puppetlabs/puppet/environments/%{::environment}/hieradata"
-  :datadir: "/etc/puppet/environments/%{::environment}/hieradata"
+  :datadir: "/etc/puppet/environments/%{environment}/hieradata"
